@@ -1,6 +1,10 @@
 # Sports Team Tracker
 
-This is a sample application to show how various backbone related frameworks can be combined to create a powerful single-page application. The application itself tracks information related to sports teams, e.g. team roster, game schedules etc. We use the following frameworks and technogies to implement the tracker:
+This is a sample application to show the use of various backbone-related frameworks, all in one place. The application itself tracks information related to sports teams, e.g. team players, game schedules etc. Here's the domain model for the application:
+
+![Sports Team Tracker](https://github.com/archfirst/sports-team-tracker/blob/master/docs/SportsTeamTrackerModel.png?raw=true)
+
+We use the following frameworks and technogies to implement the application:
 
 * Node.js
 * jQuery
@@ -9,7 +13,7 @@ This is a sample application to show how various backbone related frameworks can
 * [Keel](https://github.com/archfirst/keel) - a light framework around Backbone.js to encourage best practices and conventions
 * [Handlebars](http://handlebarsjs.com/) - a logic-less web template system
 * [Sass](http://sass-lang.com/) / [Compass](http://compass-style.org/): CSS productivity frameworks
-* [Backbone-relational.js] (http://backbonerelational.org/): provides complex relations between Backbone models
+* [Backbone-relational.js](http://backbonerelational.org/): provides complex relations between Backbone models
 * [Backbone.Validation](http://thedersen.com/projects/backbone-validation/): validates models and form input
 * [backbone.stickit](http://nytimes.github.io/backbone.stickit/): binds Model attributes to View elements provoding two-way binding
 
