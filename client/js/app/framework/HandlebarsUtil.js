@@ -23,18 +23,19 @@
  */
 define(
     [
-        'handlebars'
+        'handlebars',
+        'moment'
     ],
-    function() {
+    function(Handlebars, moment) {
         'use strict';
 
         return {
             registerHelpers: function() {
 
-                // formatMoney
-                // Handlebars.registerHelper('formatMoney', function(money) {
-                //     return Formatter.formatMoney(money);
-                // });
+                // formatDateTime
+                Handlebars.registerHelper('formatDateTime', function(date) {
+                    return moment(date).format('ddd, MMM Do YYYY hh:mm a');
+                });
             }
         };
     }

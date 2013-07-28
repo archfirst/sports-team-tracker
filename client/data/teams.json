@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "name": "Patriots",
+        "coach": 1,
+        "players": [2, 3]
+    },
+    {
+        "id": 2,
+        "name": "New York Jets",
+        "coach": 4,
+        "players": [5, 6]
+    }
+]

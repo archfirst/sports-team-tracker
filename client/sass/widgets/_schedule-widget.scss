@@ -1,0 +1,30 @@
+.schedule-table {
+    thead {
+        background-color: #C0C0C0;
+    }
+
+    tbody tr.selected {
+        background-color: $table-row-selected-color;
+    }
+
+    th, td {
+        height: 25px;
+        padding: 0 10px;
+    }
+
+    td {
+        border-bottom: 1px solid $table-row-separator-color;
+    }
+
+    .date {
+        text-align: left;
+    }
+
+    td.date {
+        font-family: monospace;
+    }
+
+    .teams {
+        text-align: center;
+    }
+}

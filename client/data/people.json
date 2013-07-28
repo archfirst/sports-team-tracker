@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "firstName": "Bill",
+        "lastName": "Belichick"
+    },
+    {
+        "id": 2,
+        "firstName": "Tom",
+        "lastName": "Brady"
+    },
+    {
+        "id": 3,
+        "firstName": "Tim",
+        "lastName": "Tebow"
+    },
+    {
+        "id": 4,
+        "firstName": "Rex",
+        "lastName": "Ryan"
+    },
+    {
+        "id": 5,
+        "firstName": "Greg",
+        "lastName": "McElroy"
+    },
+    {
+        "id": 6,
+        "firstName": "Mark",
+        "lastName": "Sanchez"
+    }
+]

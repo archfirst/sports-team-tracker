@@ -11,33 +11,64 @@ body {
     background-color: $page-background-color;
 }
 
-h1 {
-    font: normal normal 20px Arial;
-    margin: 0 0 10px 0;
+header {
+    border-bottom: 1px solid $black;
+    padding: 4px 10px;
 }
 
-h2 {
-    font: normal normal 16px Arial;
+header h1 {
+    font: normal normal 16px/22px Arial;
+    margin: 0;
 }
 
-select {
-    display: block;
+ul {
+    list-style-type: none;
+    margin: 0 10px;
+    padding: 0;
+}
+
+li {
+    border-bottom: 1px solid black;
+    line-height: 22px;
+}
+
+/* -----------------------------------------------------------------------------
+ * General Purpose Classes
+ * -------------------------------------------------------------------------- */
+.nodisplay {
+    display: none;
+}
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}
+
+.pull-left.margin-small {
+    margin-right: 8px;
+}
+
+.pull-left.margin-medium {
+    margin-right: 10px;
+}
+
+.pull-right.margin-small {
+    margin-left: 8px;
+}
+
+.pull-right.margin-medium {
+    margin-left: 10px;
 }
 
 /* -----------------------------------------------------------------------------
  * Home Page
  * -------------------------------------------------------------------------- */
 #home-page {
-    padding: 10px;
 }
 
 #home-page .button-bar {
     margin-top: 10px;
-}
-
-/* -----------------------------------------------------------------------------
- * Order Table Page
- * -------------------------------------------------------------------------- */
-#order-table-page {
-    padding: 10px;
 }

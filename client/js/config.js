@@ -40,7 +40,10 @@ var require = {
         relational:                  'vendor/backbone-relational',
 
         // Templating
-        handlebars:                  'vendor/handlebars-1.0.rc.1'
+        handlebars:                  'vendor/handlebars-1.0.rc.1',
+
+        // Date library
+        moment:                      'vendor/moment-1.7.2'
     },
 
     shim: {
@@ -51,6 +54,10 @@ var require = {
 
         handlebars: {
             exports: 'Handlebars'
+        },
+
+        moment: {
+            exports: 'moment'
         },
 
         relational: {

@@ -35,15 +35,20 @@ define(
     function(Backbone) {
         'use strict';
 
+        // ********************************************************************
         // Define Person
+        // ********************************************************************
         var Person = Backbone.RelationalModel.extend({
         });
 
         var PersonCollection = Backbone.Collection.extend({
-            model: Person
+            model: Person,
+            url: 'data/people.json'
         });
 
+        // ********************************************************************
         // Define Team
+        // ********************************************************************
         var Team = Backbone.RelationalModel.extend({
             relations: [
                 {
@@ -58,105 +63,57 @@ define(
                     relatedModel: Person,
                     includeInJSON: Backbone.Model.prototype.idAttribute,
                     collectionType: PersonCollection
-                },
-                {
-                    type: Backbone.HasMany,
-                    key: 'games',
-                    relatedModel: 'Game',
-                    includeInJSON: Backbone.Model.prototype.idAttribute,
-                    collectionType: 'GameCollection'
                 }
+                // Commented out because not able to make a forward reference to Game
+                // {
+                //     type: Backbone.HasMany,
+                //     key: 'games',
+                //     relatedModel: 'Game',
+                //     includeInJSON: Backbone.Model.prototype.idAttribute,
+                //     collectionType: 'GameCollection'
+                // }
             ]
         });
 
         var TeamCollection = Backbone.Collection.extend({
-            model: Team
+            model: Team,
+            url: 'data/teams.json'
         });
 
+        // ********************************************************************
         // Define Game
+        // ********************************************************************
         var Game = Backbone.RelationalModel.extend({
             relations: [
                 {
                     type: Backbone.HasMany,
                     key: 'teams',
                     relatedModel: Team,
-                    includeInJSON: Backbone.Model.prototype.idAttribute,
+                    includeInJSON: true,
                     collectionType: TeamCollection
                 }
             ]
         });
 
         var GameCollection = Backbone.Collection.extend({
-            model: Game
-        });
-
-
-        // ********************************************************************
-        // Create the Patriots team
-        // ********************************************************************
-
-        // Define people
-        var bill = new Person({
-            firstName: 'Bill',
-            lastName: 'Belichick'
-        });
-
-        var tom = new Person({
-            firstName: 'Tom',
-            lastName: 'Brady'
-        });
-
-        var tim = new Person({
-            firstName: 'Tim',
-            lastName: 'Tebow'
-        });
-
-        // Define the team
-        var patriots = new Team({
-            name: 'Patriots',
-            coach: bill,
-            players: [tom, tim]
+            model: Game,
+            url: 'data/games.json'
         });
 
         // ********************************************************************
-        // Create the Jets team
+        // Fetch people, teams and games
         // ********************************************************************
+        var people = new PersonCollection();
+        var teams = new TeamCollection();
+        var games = new GameCollection();
 
-        // Define people
-        var rex = new Person({
-            firstName: 'Rex',
-            lastName: 'Ryan'
-        });
-
-        var greg = new Person({
-            firstName: 'Greg',
-            lastName: 'McElroy'
-        });
-
-        var mark = new Person({
-            firstName: 'Mark',
-            lastName: 'Sanchez'
-        });
-
-        // Define the team
-        var nyjets = new Team({
-            name: 'New York Jets',
-            coach: rex,
-            players: [greg, mark]
-        });
+        people.fetch();
+        teams.fetch();
+        games.fetch();
 
         // ********************************************************************
-        // Create a game
+        // Define the repository
         // ********************************************************************
-        var game1 = new Game({
-            date: new Date(),
-            teams: [patriots, nyjets]
-        });
-
-        var people = new PersonCollection([bill, tom, tim, rex, greg, mark]);
-        var teams = new TeamCollection([patriots, nyjets]);
-        var games = new GameCollection([game1]);
-
         var _repository = {
             getPeople: function() {
                 return people;
