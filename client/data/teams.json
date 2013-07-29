@@ -1,14 +1,134 @@
 [
     {
         "id": 1,
-        "name": "Patriots",
+        "name": "Baltimore Ravens"
+    },
+    {
+        "id": 2,
+        "name": "Cincinnati Bengals"
+    },
+    {
+        "id": 3,
+        "name": "Cleveland Browns"
+    },
+    {
+        "id": 4,
+        "name": "Pittsburgh Steelers"
+    },
+    {
+        "id": 5,
+        "name": "Houston Texans"
+    },
+    {
+        "id": 6,
+        "name": "Indianapolis Colts"
+    },
+    {
+        "id": 7,
+        "name": "Jacksonville Jaguars"
+    },
+    {
+        "id": 8,
+        "name": "Tennessee Titans"
+    },
+    {
+        "id": 9,
+        "name": "Buffalo Bills"
+    },
+    {
+        "id": 10,
+        "name": "Miami Dolphins"
+    },
+    {
+        "id": 11,
+        "name": "New England Patriots",
         "coach": 1,
         "players": [2, 3]
     },
     {
-        "id": 2,
+        "id": 12,
         "name": "New York Jets",
         "coach": 4,
         "players": [5, 6]
+    },
+    {
+        "id": 13,
+        "name": "Denver Broncos"
+    },
+    {
+        "id": 14,
+        "name": "Kansas City Chiefs"
+    },
+    {
+        "id": 15,
+        "name": "Oakland Raiders"
+    },
+    {
+        "id": 16,
+        "name": "San Diego Chargers"
+    },
+    {
+        "id": 17,
+        "name": "Chicago Bears"
+    },
+    {
+        "id": 18,
+        "name": "Detroit Lions"
+    },
+    {
+        "id": 19,
+        "name": "Green Bay Packers"
+    },
+    {
+        "id": 20,
+        "name": "Minnesota Vikings"
+    },
+    {
+        "id": 21,
+        "name": "Atlanta Falcons"
+    },
+    {
+        "id": 22,
+        "name": "Carolina Panthers"
+    },
+    {
+        "id": 23,
+        "name": "New Orleans Saints"
+    },
+    {
+        "id": 24,
+        "name": "Tampa Bay Buccaneers"
+    },
+    {
+        "id": 25,
+        "name": "Dallas Cowboys"
+    },
+    {
+        "id": 26,
+        "name": "New York Giants"
+    },
+    {
+        "id": 27,
+        "name": "Philadelphia Eagles"
+    },
+    {
+        "id": 28,
+        "name": "Washington Redskins"
+    },
+    {
+        "id": 29,
+        "name": "Arizona Cardinals"
+    },
+    {
+        "id": 30,
+        "name": "San Francisco 49ers"
+    },
+    {
+        "id": 31,
+        "name": "Seattle Seahawks"
+    },
+    {
+        "id": 32,
+        "name": "St. Louis Rams"
     }
 ]

@@ -1,6 +1,10 @@
 # Sports Team Tracker
 
-This is a sample application to show the use of various backbone-related frameworks, all in one place. The application itself tracks information related to sports teams, e.g. team players, game schedules etc. Here's the domain model for the application:
+This is a sample application to show the use of various backbone-related frameworks, all in one place. The application itself tracks information related to sports teams, e.g. team players, game schedules etc. Here's a screen shot of the application:
+
+![Sports Team Tracker](https://github.com/archfirst/sports-team-tracker/blob/master/docs/SportsTeamTrackerScreenShot.png?raw=true)
+
+The domain model for the application is shown below:
 
 ![Sports Team Tracker](https://github.com/archfirst/sports-team-tracker/blob/master/docs/SportsTeamTrackerModel.png?raw=true)
 
