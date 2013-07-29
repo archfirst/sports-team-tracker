@@ -31,6 +31,9 @@ define(
         'use strict';
 
         return BaseView.extend({
+            tagName: 'table',
+            className: 'schedule-table clearfix',
+
             template: {
                 name: 'ScheduleTemplate',
                 source: ScheduleTemplate

@@ -86,11 +86,16 @@ define(
         var Game = Backbone.RelationalModel.extend({
             relations: [
                 {
-                    type: Backbone.HasMany,
-                    key: 'teams',
+                    type: Backbone.HasOne,
+                    key: 'homeTeam',
                     relatedModel: Team,
-                    includeInJSON: Backbone.Model.prototype.idAttribute,
-                    collectionType: TeamCollection
+                    includeInJSON: Backbone.Model.prototype.idAttribute
+                },
+                {
+                    type: Backbone.HasOne,
+                    key: 'awayTeam',
+                    relatedModel: Team,
+                    includeInJSON: Backbone.Model.prototype.idAttribute
                 }
             ]
         });

@@ -42,14 +42,9 @@ define(
             }
         };
 
-        return {
-            registerHelpers: function() {
-
-                // formatDateTime
-                Handlebars.registerHelper('formatDateTime', function(date) {
-                    return moment(date).format('ddd, MMM Do YYYY hh:mm a');
-                });
-            }
-        };
+        // formatDateTime helper
+        Handlebars.registerHelper('formatDateTime', function(date) {
+            return moment(date).format('ddd, MMM Do YYYY hh:mm a');
+        });
     }
 );

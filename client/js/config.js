@@ -30,7 +30,12 @@ var require = {
 
     paths: {
         // jQuery
-        jquery:                      'vendor/jquery-1.8.3',
+        jquery:                      'vendor/jquery-1.10.2',
+        chosen:                     'vendor/chosen.jquery',
+
+        // Bootstrap
+        bootstrap:                   'vendor/bootstrap',
+        datepicker:                  'vendor/bootstrap-datepicker',
 
         // Underscore
         underscore:                  'vendor/underscore-1.4.4',
@@ -38,18 +43,27 @@ var require = {
         // Backbone
         backbone:                    'vendor/backbone-1.0.0',
         relational:                  'vendor/backbone-relational',
+        stickit:                     'vendor/backbone.stickit-0.6.3',
 
         // Templating
         handlebars:                  'vendor/handlebars-1.0.rc.1',
 
         // Date library
-        moment:                      'vendor/moment-1.7.2'
+        moment:                      'vendor/moment-2.0.0.min'
     },
 
     shim: {
         backbone: {
             deps: ['underscore', 'jquery'],
             exports: 'Backbone'
+        },
+
+        bootstrap: {
+            deps: ['jquery']
+        },
+
+        datepicker: {
+            deps: ['bootstrap']
         },
 
         handlebars: {
@@ -61,6 +75,14 @@ var require = {
         },
 
         relational: {
+            deps: ['backbone']
+        },
+
+        chosen: {
+            deps: ['jquery']
+        },
+
+        stickit: {
             deps: ['backbone']
         },
 

@@ -25,16 +25,16 @@
 // Vendor Stylesheets
 // -----------------------------------------------------------------------------
 @import "compass";
-@import "vendor/normalize";
+@import "vendor/bootstrap";
 @import "vendor/h5bp";
+@import "vendor/datepicker";
+@import "vendor/chosen";
 
 // -----------------------------------------------------------------------------
 // Application Stylesheets
 // -----------------------------------------------------------------------------
 @import "common/colors";
-@import "common/mixins";
 @import "common/general";
-@import "common/buttons";
 
 // -----------------------------------------------------------------------------
 // Page Stylesheets
@@ -44,4 +44,4 @@
 // Widget Stylesheets
 // -----------------------------------------------------------------------------
 @import "widgets/schedule-widget";
-@import "widgets/toolbar-widget";
+@import "widgets/game-form";

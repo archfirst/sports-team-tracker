@@ -1,4 +1,7 @@
 .schedule-table {
+    float: left;
+    margin-left: 10px;
+
     thead {
         background-color: #C0C0C0;
     }
@@ -24,7 +27,7 @@
         font-family: monospace;
     }
 
-    .teams {
+    .home-team, .away-team {
         text-align: center;
     }
 }

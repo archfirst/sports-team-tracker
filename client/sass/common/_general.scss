@@ -7,29 +7,15 @@
     @include box-sizing(border-box);
 }
 
-body {
-    background-color: $page-background-color;
-}
-
 header {
     border-bottom: 1px solid $black;
+    margin-bottom: 10px;
     padding: 4px 10px;
 }
 
 header h1 {
     font: normal normal 16px/22px Arial;
     margin: 0;
-}
-
-ul {
-    list-style-type: none;
-    margin: 0 10px;
-    padding: 0;
-}
-
-li {
-    border-bottom: 1px solid black;
-    line-height: 22px;
 }
 
 /* -----------------------------------------------------------------------------
@@ -47,28 +33,9 @@ li {
     float: right;
 }
 
-.pull-left.margin-small {
-    margin-right: 8px;
-}
-
-.pull-left.margin-medium {
-    margin-right: 10px;
-}
-
-.pull-right.margin-small {
-    margin-left: 8px;
-}
-
-.pull-right.margin-medium {
-    margin-left: 10px;
-}
-
 /* -----------------------------------------------------------------------------
- * Home Page
+ * Chosen control
  * -------------------------------------------------------------------------- */
-#home-page {
-}
-
-#home-page .button-bar {
-    margin-top: 10px;
+.chzn-container {
+    margin-bottom: 10px;
 }

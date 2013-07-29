@@ -22,12 +22,12 @@
 define(
     [
         'app/domain/Repository',
+        'app/widgets/game-form/GameForm',
         'app/widgets/schedule/ScheduleWidget',
-        'app/widgets/toolbar/ToolbarWidget',
         'keel/BaseView',
         'text!app/pages/home/HomePageTemplate.html'
     ],
-    function(Repository, ScheduleWidget, ToolbarWidget, BaseView, HomePageTemplate) {
+    function(Repository, GameForm, ScheduleWidget, BaseView, HomePageTemplate) {
         'use strict';
 
         return BaseView.extend({
@@ -42,17 +42,17 @@ define(
             postRender: function() {
                 this.addChildren([
                     {
-                        id: 'ToolbarWidget',
-                        viewClass: ToolbarWidget,
-                        parentElement: this.$el
-                    },
-                    {
                         id: 'ScheduleWidget',
                         viewClass: ScheduleWidget,
                         parentElement: this.$el,
                         options: {
                             collection: Repository.getGames()
                         }
+                    },
+                    {
+                        id: 'GameForm',
+                        viewClass: GameForm,
+                        parentElement: this.$el
                     }
                 ]);
             }
