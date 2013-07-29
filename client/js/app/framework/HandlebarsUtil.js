@@ -29,6 +29,19 @@ define(
     function(Handlebars, moment) {
         'use strict';
 
+        // Add Backbone model and collection support
+        Handlebars.JavaScriptCompiler.prototype.nameLookup = function(parent, name /*, type */) {
+            if (/^[0-9]+$/.test(name)) {
+                return '(typeof ' + parent + '.at == "function" ? ' + parent + '.at(' + name + ') : ' + parent + '[' + name + '])';
+            }
+            else if (Handlebars.JavaScriptCompiler.isValidJavaScriptVariableName(name)) {
+                return '(typeof ' + parent + '.get == "function" ? ' + parent + '.get("' + name + '") : ' + parent + '.' + name + ')';
+            }
+            else {
+                return parent + '["' + name + '"]';
+            }
+        };
+
         return {
             registerHelpers: function() {
 

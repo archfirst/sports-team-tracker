@@ -89,7 +89,7 @@ define(
                     type: Backbone.HasMany,
                     key: 'teams',
                     relatedModel: Team,
-                    includeInJSON: true,
+                    includeInJSON: Backbone.Model.prototype.idAttribute,
                     collectionType: TeamCollection
                 }
             ]

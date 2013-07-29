@@ -51,6 +51,17 @@ define(
 
             handleMouseOut: function() {
                 this.$el.removeClass('selected');
+            },
+
+            render: function() {
+                this.destroyChildren();
+
+                var template = this.getTemplate();
+
+                // do not convert model to JSON becuase that will lose associations
+                this.$el.html( template(this.model) );
+
+                return this;
             }
         });
     }
