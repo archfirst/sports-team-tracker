@@ -29,81 +29,12 @@
 
 define(
     [
-        'backbone',
-        'relational'
+        'app/domain/GameCollection',
+        'app/domain/PersonCollection',
+        'app/domain/TeamCollection'
     ],
-    function(Backbone) {
+    function(GameCollection, PersonCollection, TeamCollection) {
         'use strict';
-
-        // ********************************************************************
-        // Define Person
-        // ********************************************************************
-        var Person = Backbone.RelationalModel.extend({
-        });
-
-        var PersonCollection = Backbone.Collection.extend({
-            model: Person,
-            url: 'data/people.json'
-        });
-
-        // ********************************************************************
-        // Define Team
-        // ********************************************************************
-        var Team = Backbone.RelationalModel.extend({
-            relations: [
-                {
-                    type: Backbone.HasOne,
-                    key: 'coach',
-                    relatedModel: Person,
-                    includeInJSON: Backbone.Model.prototype.idAttribute
-                },
-                {
-                    type: Backbone.HasMany,
-                    key: 'players',
-                    relatedModel: Person,
-                    includeInJSON: Backbone.Model.prototype.idAttribute,
-                    collectionType: PersonCollection
-                }
-                // Commented out because not able to make a forward reference to Game
-                // {
-                //     type: Backbone.HasMany,
-                //     key: 'games',
-                //     relatedModel: 'Game',
-                //     includeInJSON: Backbone.Model.prototype.idAttribute,
-                //     collectionType: 'GameCollection'
-                // }
-            ]
-        });
-
-        var TeamCollection = Backbone.Collection.extend({
-            model: Team,
-            url: 'data/teams.json'
-        });
-
-        // ********************************************************************
-        // Define Game
-        // ********************************************************************
-        var Game = Backbone.RelationalModel.extend({
-            relations: [
-                {
-                    type: Backbone.HasOne,
-                    key: 'homeTeam',
-                    relatedModel: Team,
-                    includeInJSON: Backbone.Model.prototype.idAttribute
-                },
-                {
-                    type: Backbone.HasOne,
-                    key: 'awayTeam',
-                    relatedModel: Team,
-                    includeInJSON: Backbone.Model.prototype.idAttribute
-                }
-            ]
-        });
-
-        var GameCollection = Backbone.Collection.extend({
-            model: Game,
-            url: 'data/games.json'
-        });
 
         // ********************************************************************
         // Fetch people, teams and games

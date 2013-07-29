@@ -21,6 +21,7 @@
  */
 define(
     [
+        'app/domain/Game',
         'app/domain/Repository',
         'backbone',
         'keel/BaseView',
@@ -28,7 +29,7 @@ define(
         'datepicker',
         'chosen'
     ],
-    function(Repository, Backbone, BaseView, GameFormTemplate) {
+    function(Game, Repository, Backbone, BaseView, GameFormTemplate) {
         'use strict';
 
         return BaseView.extend({
@@ -81,7 +82,7 @@ define(
             },
 
             _createNewGame: function() {
-                this.model = new Backbone.Model();
+                this.model = new Game();
                 this.model.set('date', new Date());
             },
 
