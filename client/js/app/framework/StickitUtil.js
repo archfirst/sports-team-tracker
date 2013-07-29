@@ -49,17 +49,22 @@ define(
             selector: 'select.chosen',
 
             initialize: function($el, model, options) {
+
+                var changeEvent = 'change:' + options.observe;
+
                 $el.chosen({
                     width: '100%'
                 });
-                var up = function(m, v, opt) {
-                    if (!opt.bindKey) {
+
+                var handleModelChange = function(model, value, options) {
+                    if (!options.bindKey) {
+                        // liszt:updated is an event specific to the Chosen drop-down asking it to rebuild it
                         $el.trigger('liszt:updated');
                     }
                 };
-                this.listenTo(model, 'change:' + options.observe, up);
+
+                this.listenTo(model, changeEvent, handleModelChange);
             }
         });
-
     }
 );
