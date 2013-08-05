@@ -19,6 +19,9 @@
  *
  * @author Naresh Bhatia
  */
+
+/*jshint devel:true */
+
 define(
     [
         'app/domain/Game',
