@@ -1,3 +1,10 @@
+// Backbone.Validation v0.8.0
+//
+// Copyright (c) 2011-2013 Thomas Pedersen
+// Distributed under MIT License
+//
+// Documentation and full license available at:
+// http://thedersen.com/projects/backbone-validation
 Backbone.Validation = (function(_){
   'use strict';
 

@@ -32,7 +32,7 @@ define(
             // Sets the value of the datepicker based on the model
             update: function($el, val, model, options) {
                 _.defer(function() {
-                    $el.datepicker('setDate', model.get(options.observe));
+                    $el.datepicker('update', model.get(options.observe));
                 });
             },
 

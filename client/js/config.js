@@ -44,6 +44,8 @@ var require = {
         backbone:                    'vendor/backbone-1.0.0',
         relational:                  'vendor/backbone-relational',
         stickit:                     'vendor/backbone.stickit-0.6.3',
+        validationCore:              'vendor/backbone-validation-0.8.0',
+        validation:                  'vendor/backbone.validation.bootstrap',
 
         // Templating
         handlebars:                  'vendor/handlebars-1.0.rc.1',
@@ -88,6 +90,14 @@ var require = {
 
         underscore: {
             exports: '_'
+        },
+
+        validationCore: {
+            deps: ['backbone']
+        },
+
+        validation: {
+            deps: ['validationCore']
         }
     }
 };

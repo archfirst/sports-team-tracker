@@ -29,7 +29,8 @@ define(
     [
         'app/domain/Team',
         'backbone',
-        'relational'
+        'relational',
+        'validation'
     ],
     function(Team, Backbone) {
         'use strict';
@@ -48,7 +49,19 @@ define(
                     relatedModel: Team,
                     includeInJSON: Backbone.Model.prototype.idAttribute
                 }
-            ]
+            ],
+
+            validation: {
+                date: {
+                    required: true
+                },
+                homeTeam: {
+                    required: true
+                },
+                awayTeam: {
+                    required: true
+                }
+            }
         });
     }
 );
