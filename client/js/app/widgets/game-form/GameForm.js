@@ -19,9 +19,6 @@
  *
  * @author Naresh Bhatia
  */
-
-/*jshint devel:true */
-
 define(
     [
         'app/domain/Game',
@@ -57,7 +54,7 @@ define(
                     datepickerOptions: {
                         autoclose: true
                     },
-                    setOptions: { validate: false }
+                    setOptions: { validate: true }
                 },
 
                 '.js-homeTeam': {
@@ -71,7 +68,7 @@ define(
                             value: null
                         }
                     },
-                    setOptions: { validate: false }
+                    setOptions: { validate: true }
                 },
 
                 '.js-awayTeam': {
@@ -85,7 +82,7 @@ define(
                             value: null
                         }
                     },
-                    setOptions: { validate: false }
+                    setOptions: { validate: true }
                 }
             },
 
@@ -95,13 +92,7 @@ define(
 
             initialize: function() {
                 this._createNewGame();
-// Backbone.Validation.bind(this);
-                this.listenTo(this.model, 'validated:invalid', this.handleModelError);
-                this.listenTo(this.model, 'change', this.logGame);
-            },
-
-            handleModelError: function(model, errors) {
-                console.log('validation failed:' + errors.date + ', ' + errors.homeTeam + ', ' + errors.awayTeam);
+                Backbone.Validation.bind(this);
             },
 
             newGame: function() {
@@ -116,17 +107,6 @@ define(
 
             postRender: function() {
                 this.stickit();
-            },
-
-            logGame: function(game) {
-
-                var homeTeam = game.get('homeTeam');
-                var awayTeam = game.get('awayTeam');
-
-                console.log(
-                    'date: ' + game.get('date') +
-                    ', homeTeam: ' + (homeTeam ? homeTeam.get('name') : 'null') +
-                    ', awayTeam: ' + (awayTeam ? awayTeam.get('name') : 'null'));
             }
         });
     }

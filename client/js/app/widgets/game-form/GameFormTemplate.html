@@ -1,11 +1,23 @@
-<label>Date</label>
-<input type="text" class="datepicker game-date js-gameDate" />
+<div class="control-group">
+    <label class="control-label" for="game-date">Date</label>
+    <div class="controls">
+        <input type="text" class="datepicker game-date js-gameDate" id="game-date" name="date" data-error-style="inline">
+    </div>
+</div>
 
-<label>Home Team</label>
-<select class="chosen home-team js-homeTeam"></select>
+<div class="control-group">
+    <label class="control-label" for="home-team">Home Team</label>
+    <div class="controls">
+        <select name="homeTeam" id="home-team" class="chosen home-team js-homeTeam" data-error-style="inline"></select>
+    </div>
+</div>
 
-<label>Away Team</label>
-<select class="chosen away-team js-awayTeam"></select>
+<div class="control-group">
+    <label class="control-label" for="away-team">Away Team</label>
+    <div class="controls">
+        <select name="awayTeam" id="away-team" class="chosen away-team js-awayTeam" data-error-style="inline"></select>
+    </div>
+</div>
 
 <div class="form-actions">
     <button class="btn btn-primary js-newGameButton" type="button">New Game</button>

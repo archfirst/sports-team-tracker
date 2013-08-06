@@ -1,9 +1,10 @@
 _.extend(Backbone.Validation.callbacks, {
   valid: function(view, attr, selector){
+    console.log('valid: ' + attr + ', ' + selector);
     selector = (selector == 'id'
                 ? '#' + attr
                 : '[' + selector + '=' + attr + ']');
-    var control = view.$('[' + selector + '=' + attr + ']');
+    var control = view.$(selector);
     var group = control.parents(".control-group");
     group.removeClass("error");
 
@@ -21,10 +22,11 @@ _.extend(Backbone.Validation.callbacks, {
     }
   },
   invalid: function(view, attr, error, selector) {
+    console.log('invalid: ' + attr + ', ' + error + ', ' + selector);
     selector = (selector == 'id'
                 ? '#' + attr
                 : '[' + selector + '=' + attr + ']');
-    var control = view.$('[' + selector + '=' + attr + ']');
+    var control = view.$(selector);
     var group = control.parents(".control-group");
     group.addClass("error");
 
