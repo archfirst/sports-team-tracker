@@ -21,7 +21,7 @@
  */
 define(
     [
-        'app/domain/Game',
+        'app/domain/GameNonRelational',
         'app/domain/Repository',
         'backbone',
         'keel/BaseView',
@@ -44,8 +44,8 @@ define(
             },
 
             events: {
-                'click .js-newGameButton': 'newGame',
-                'click .js-saveButton': 'saveGame'
+                'click .js-validateButton': 'validateGame',
+                'click .js-resetButton': 'resetGame'
             },
 
             bindings: {
@@ -86,22 +86,26 @@ define(
                 }
             },
 
-            _createNewGame: function() {
-                this.model = new Game();
-            },
-
             initialize: function() {
-                this._createNewGame();
+                this.model = new Game();
                 Backbone.Validation.bind(this);
             },
 
-            newGame: function() {
-                this._createNewGame();
+            validateGame: function() {
+                this.$('.alert').hide();
+
+                if (this.model.isValid(true)) {
+                    this.$('.alert-success').fadeIn();
+                }
+                else {
+                    this.$('.alert-error').fadeIn();
+                }
                 return false;
             },
 
-            saveGame: function() {
-                Repository.getGames().create(this.model, {wait: true});
+            resetGame: function() {
+                this.$('.alert').hide();
+                this.model.reset();
                 return false;
             },
 

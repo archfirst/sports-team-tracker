@@ -1,25 +1,33 @@
+<div class="alert alert-error" style="display:none">
+    <strong>Ooops!</strong> You did not pass the validation.
+</div>
+<div class="alert alert-success" style="display:none">
+    <strong>Success!</strong> You passed the validation.
+</div>
+
+
 <div class="control-group">
     <label class="control-label" for="game-date">Date</label>
     <div class="controls">
-        <input type="text" class="datepicker game-date js-gameDate" id="game-date" name="date" data-error-style="inline">
+        <input type="text" class="datepicker game-date js-gameDate" id="game-date" name="date" data-error-style="block">
     </div>
 </div>
 
 <div class="control-group">
     <label class="control-label" for="home-team">Home Team</label>
     <div class="controls">
-        <select name="homeTeam" id="home-team" class="chosen home-team js-homeTeam" data-error-style="inline"></select>
+        <select name="homeTeam" id="home-team" class="chosen home-team js-homeTeam" data-error-style="block"></select>
     </div>
 </div>
 
 <div class="control-group">
     <label class="control-label" for="away-team">Away Team</label>
     <div class="controls">
-        <select name="awayTeam" id="away-team" class="chosen away-team js-awayTeam" data-error-style="inline"></select>
+        <select name="awayTeam" id="away-team" class="chosen away-team js-awayTeam" data-error-style="block"></select>
     </div>
 </div>
 
 <div class="form-actions">
-    <button class="btn btn-primary js-newGameButton" type="button">New Game</button>
-    <button class="btn btn-primary js-saveButton" type="button">Save</button>
+    <button class="btn btn-primary js-validateButton" type="button">Validate</button>
+    <button class="btn js-resetButton" type="button">Reset</button>
 </div>
