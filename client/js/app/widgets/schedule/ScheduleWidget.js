@@ -23,11 +23,10 @@
 define(
     [
         'app/widgets/schedule/ScheduleTableBodyView',
-        'backbone',
         'keel/BaseView',
         'text!app/widgets/schedule/ScheduleTemplate.html'
     ],
-    function(ScheduleTableBodyView, Backbone, BaseView, ScheduleTemplate) {
+    function(ScheduleTableBodyView, BaseView, ScheduleTemplate) {
         'use strict';
 
         return BaseView.extend({

@@ -30,6 +30,8 @@ define(
 
         return BaseView.extend({
 
+            template: null,
+
             initialize: function(/* options */) {
                 this.listenTo(this.collection, 'add', this.handleAdd);
                 this.listenTo(this.collection, 'destroy', this.handleDestroy);
